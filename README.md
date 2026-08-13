@@ -20,3 +20,26 @@ A production-ready, asynchronous FastAPI backend for managing library books, use
    ```bash
    git clone https://github.com/manas-0/E-Library.git
    cd E_library
+
+Create and activate a virtual environment:
+
+Bash
+python -m venv venv
+# On Windows:
+venv\Scripts\activate
+Install dependencies:
+
+Bash
+pip install -r requirements.txt
+Configure Environment Variables:
+Create a .env file in the root directory based on .env.example:
+
+Code snippet
+AI_API_TOKEN=your_token_here
+DATABASE_URL=postgresql+asyncpg://postgres:password@localhost:5432/elibrary
+Run the application:
+
+Bash
+uvicorn app.main:app --reload
+Access the interactive documentation at http://127.0.0.1:8000/docs.
+   
