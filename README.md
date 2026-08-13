@@ -32,7 +32,8 @@ Install dependencies:
 
 Bash
 pip install -r requirements.txt
-Configure Environment Variables:
+
+## Configure Environment Variables:
 Create a .env file in the root directory based on .env.example:
 
 Code snippet
