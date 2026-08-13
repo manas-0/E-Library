@@ -1,7 +1,8 @@
 # E-Library Management System API
 
-A production-ready, asynchronous FastAPI backend for managing library books, user accounts, borrowing lifecycles, and automated AI-generated book summaries.
+>  Live API Documentation:** [Access Swagger UI](https://e-library-kt57.onrender.com/docs)
 
+A production-ready, asynchronous FastAPI backend for managing library books, user accounts, borrowing lifecycles, and automated AI-generated book summaries.
 ## Features
 - **Modern FastAPI & Pydantic V2:** Built using type-safe validation, FastAPI `Annotated` dependency injection, and automatic Swagger UI documentation with pre-filled examples.
 - **Asynchronous PostgreSQL:** Uses SQLAlchemy (AsyncIO) and `asyncpg` for high-performance, non-blocking database operations.
