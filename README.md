@@ -88,7 +88,3 @@ Full request/response schemas are available in the [Swagger UI](https://e-librar
    ```
 
    The interactive docs will be available at `http://127.0.0.1:8000/docs`.
-
-## License
-
-Add a license (e.g. MIT) here if you intend this repo to be publicly reusable.
