@@ -27,13 +27,13 @@ A production-ready, asynchronous FastAPI backend for managing library books, use
 ## API Endpoints
 
 | Method | Endpoint | Description |
-|---|---|---|
-| `POST` | `/api/books` | Create a book |
-| `GET` | `/api/books` | Search/list books |
-| `POST` | `/api/users` | Create a user |
+| :--- | :--- | :--- |
+| `POST` | `/api/books/` | Create a new book |
+| `GET` | `/api/books/` | Search/list books with optional title/author filters |
+| `POST` | `/api/books/users` | Register a new user |
 | `GET` | `/api/books/{id}/summary` | Get (or generate + cache) an AI summary for a book |
-| `POST` | `/api/borrow` | Borrow a book |
-| `POST` | `/api/return` | Return a book |
+| `POST` | `/api/books/{id}/borrow` | Borrow a book |
+| `POST` | `/api/books/{id}/return` | Return a borrowed book |
 
 Full request/response schemas are available in the [Swagger UI](https://e-library-kt57.onrender.com/docs).
 
@@ -49,7 +49,6 @@ Full request/response schemas are available in the [Swagger UI](https://e-librar
 - **No authentication** — `user_id` is currently trusted from the request body rather than a verified JWT. In a production system this would come from `Depends(get_current_user)`.
 - **No row locking on borrow** — a real deployment should guard the last-copy race condition with either `SELECT ... FOR UPDATE` (pessimistic) or a conditional `UPDATE ... WHERE available_copies > 0` + rowcount check (optimistic).
 - **No pagination** on `GET /api/books` — fine at current scale, would need `limit`/`offset` or cursor pagination for a larger catalog.
-- **`Base.metadata.create_all` instead of Alembic** — convenient for local dev, but a real deployment should use versioned migrations.
 
 ## Local Setup & Installation
 
